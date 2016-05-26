@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+
+import sys
+sys.path.append('/usr/local/lib/python2.7/site-packages')
+
+
 from os import listdir
 from os.path import isfile, join
 import traceback
@@ -116,4 +122,4 @@ def bank():
 if __name__ == "__main__":
     #todo: toggle debug from config
     app.debug = True
-    app.run()
+    app.run(host= '0.0.0.0')

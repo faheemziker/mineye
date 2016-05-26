@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/usr/local/lib/python2.7/site-packages')
+
 import cv2
 import numpy
 import sqlite3
@@ -17,7 +20,7 @@ feature detection
 def get_surf_des(filename):
     f = cv2.imread(filename)
     #hessian threshold 800, 64 not 128
-    surf = cv2.SURF(800, extended=False)
+    surf = cv2.xfeatures2d.SURF_create(100, extended=True, upright=True)
     kp, des = surf.detectAndCompute(f, None)
     return kp, des
 
